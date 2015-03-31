@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/changelog_generator'
+
+if ARGV.size != 2 && ARGV.size != 3
+  warn "Wrong usage"
+  warn "changelog_generator NEW_PACKAGES_FILE OLD_PACKAGES_FILE [CHANGELOG_FILE]"
+  exit(1)
+end
+
+ARGV[0..1].each do |file|
+  unless File.exist?(file)
+    warn "Cannot open #{file}"
+    exit(1)
+  end
+end
+
+changelog = ChangelogGenerator::Changelog.new(ARGV[0], ARGV[1])
+reporter = ChangelogGenerator::Reporter.new(changelog)
+
+if ARGV.size == 3
+  unless File.exist?(ARGV[2])
+    warn "Cannot open #{ARGV[2]}"
+    exit 1
+  end
+  old_changelog = File.read(ARGV[2])
+end
+
+puts reporter.report(old_changelog)

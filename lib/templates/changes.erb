@@ -1,0 +1,29 @@
+-------------------------------------------------------------------
+<%= Time.now.strftime('%c') %> - Flavio Castelli <fcastelli@suse.com>
+
+<% unless @changelog.packages_removed.empty? %>
+- Packages removed:
+<% @changelog.packages_removed.each do |pkg| %>
+  * <%= "#{pkg}-#{@changelog.old_packages[pkg]}"%>
+<% end %>
+<% end %>
+<% unless @changelog.packages_added.empty? %>
+- Packages added:
+<% @changelog.packages_added.each do |pkg| %>
+  * <%= "#{pkg}-#{@changelog.new_packages[pkg]}" %>
+<% end %>
+<% end %>
+<% unless @changelog.packages_changed[:upgraded].empty? %>
+- Packages upgraded:
+<% @changelog.packages_changed[:upgraded].each do |pkg| %>
+  * <%= pkg %> from version <%= @changelog.old_packages[pkg] %> to <%= @changelog.new_packages[pkg] %>
+<% end %>
+<% end %>
+<% unless @changelog.packages_changed[:downgraded].empty? %>
+- Packages downgraded:
+<% @changelog.packages_changed[:downgraded].each do |pkg| %>
+  * <%= pkg %> from version <%= @changelog.old_packages[pkg] %> to <%= @changelog.new_packages[pkg] %>
+<% end %>
+<% end %>
+
+<%= old_changelog_entries %>

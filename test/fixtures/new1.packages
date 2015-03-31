@@ -1,0 +1,6 @@
+dummy-release|(none)|12|1.14|x86_64|obs://build.suse.de/SUSE:SLE-12:GA/standard/efd898be2d14ea774d475614d9795d04-dummy-release
+insserv-compat|(none)|0.1|11.80|noarch|obs://build.suse.de/SUSE:SLE-12:GA/standard/3f2b8286e18e6de54d20ec47795ed60d-insserv-compat
+libuuid1|(none)|3.25|10.1|x86_64|obs://build.suse.de/SUSE:Maintenance:316/SUSE_SLE-12_Update/c97422ee4c3360a2126c9c9f5526e533-util-linux.SUSE_SLE-12_Update
+libgcc_s1|(none)|1.5.3+r212056|11.2|x86_64|obs://build.suse.de/SUSE:Maintenance:149/SUSE_SLE-12_Update/67f03215b2ca828bdc1bec0b209c65d2-gcc48.SUSE_SLE-12_Update
+update-alternatives|(none)|1.16.10|6.109|x86_64|obs://build.suse.de/SUSE:SLE-12:GA/standard/aea8e546944077f10720802a6f8c27d5-update-alternatives
+ca-certificates|(none)|1_201403302107|6.2|noarch|obs://build.suse.de/SUSE:SLE-12:GA/standard/faf5b04b9ed33df8522abfe57dd9a93f-ca-certificates
