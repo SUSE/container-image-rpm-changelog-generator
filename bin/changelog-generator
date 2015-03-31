@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/changelog_generator'
+
+
+options = Options.parse(ARGV)
+changelog = ChangelogGenerator::Changelog.new(
+  old_packages_file: options.old_packages,
+  new_packages_file: options.new_packages)
+reporter = ChangelogGenerator::Reporter.new(changelog)
+
+if options.old_changelog
+  unless File.exist?(options.old_changelog)
+    warn "Cannot open #{ARGV[2]}"
+    exit 1
+  end
+  old_changelog = File.read(options.old_changelog)
+end
+
+puts reporter.report(old_changelog)

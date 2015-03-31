@@ -2,7 +2,7 @@ module ChangelogGenerator
   class Changelog
     attr_reader :old_packages, :new_packages
 
-    def initialize(old_packages_file, new_packages_file)
+    def initialize(old_packages_file:, new_packages_file:)
       @old_packages = parse_kiwi_packages_file(old_packages_file)
       @new_packages = parse_kiwi_packages_file(new_packages_file)
     end
@@ -39,15 +39,17 @@ module ChangelogGenerator
     def parse_kiwi_packages_file(file)
       packages = {}
 
-      CSV.open(file, col_sep: '|').readlines.each do |row|
-        name    = row[0]
-        epoch   = row[1]
-        version = row[2]
-        release = row[3]
+      if file && File.exist?(file)
+        CSV.open(file, col_sep: '|').readlines.each do |row|
+          name    = row[0]
+          epoch   = row[1]
+          version = row[2]
+          release = row[3]
 
-        epoch = epoch.to_i if epoch
+          epoch = epoch.to_i if epoch
 
-        packages[name] = RPM::Version.new(version, release, epoch)
+          packages[name] = RPM::Version.new(version, release, epoch)
+        end
       end
 
       packages
