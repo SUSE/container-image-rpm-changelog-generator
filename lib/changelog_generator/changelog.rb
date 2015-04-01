@@ -2,7 +2,7 @@ module ChangelogGenerator
   class Changelog
     attr_reader :old_packages, :new_packages
 
-    def initialize(old_packages_file:, new_packages_file:)
+    def initialize(old_packages_file, new_packages_file)
       @old_packages = parse_kiwi_packages_file(old_packages_file)
       @new_packages = parse_kiwi_packages_file(new_packages_file)
     end
@@ -31,8 +31,8 @@ module ChangelogGenerator
       end
 
       @packages_changed = {
-        upgraded: updated,
-        downgraded: downgraded
+        :upgraded => updated,
+        :downgraded => downgraded
       }
     end
 

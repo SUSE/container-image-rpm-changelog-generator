@@ -4,8 +4,8 @@ class ChangelogGeneratorTest < MiniTest::Test
   describe 'changelog generation' do
     before do
       @changelog = ChangelogGenerator::Changelog.new(
-        old_packages_file: path_to_fixture('old1.packages'),
-        new_packages_file: path_to_fixture('new1.packages')
+        path_to_fixture('old1.packages'),
+        path_to_fixture('new1.packages')
       )
     end
 
