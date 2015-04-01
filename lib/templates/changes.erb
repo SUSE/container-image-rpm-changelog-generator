@@ -1,6 +1,4 @@
--------------------------------------------------------------------
-<%= Time.now.strftime('%c') %> - Flavio Castelli <fcastelli@suse.com>
-
+* <%= Time.now.strftime('%c') %> - Flavio Castelli <fcastelli@suse.com>
 <% unless @changelog.packages_removed.empty? %>
 - Packages removed:
 <% @changelog.packages_removed.each do |pkg| %>
