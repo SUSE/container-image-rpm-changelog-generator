@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/changelog_generator'
+require File.expand_path('../../lib/changelog_generator', __FILE__)
 
 
 options = Options.parse(ARGV)
