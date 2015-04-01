@@ -13,7 +13,7 @@ class ChangelogGeneratorTest < MiniTest::Test
 
     it 'generates a valid report' do
       expected = <<EOE
-* #{Time.now.strftime('%c')} - Flavio Castelli <fcastelli@suse.com>
+* #{Time.now.strftime('%a %b %d %Y')} fcastelli@suse.com
 - Packages removed:
   * file-magic-5.19-9.1
 - Packages added:
@@ -36,7 +36,7 @@ Tue Mar 30 14:46:16 2015 - Flavio Castelli <fcastelli@suse.com>
 
 EOC
       expected = <<EOE
-* #{Time.now.strftime('%c')} - Flavio Castelli <fcastelli@suse.com>
+* #{Time.now.strftime('%a %b %d %Y')} fcastelli@suse.com
 - Packages removed:
   * file-magic-5.19-9.1
 - Packages added:
