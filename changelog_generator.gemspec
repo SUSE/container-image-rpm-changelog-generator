@@ -18,7 +18,6 @@ EOD
 
   s.required_rubygems_version = '>= 1.3.6'
 
-  s.add_runtime_dependency 'rpm'
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'
