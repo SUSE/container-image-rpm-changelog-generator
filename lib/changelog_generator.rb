@@ -1,4 +1,4 @@
-require 'csv'
+require 'fastercsv'
 require 'erb'
 require 'optparse'
 require 'ostruct'
