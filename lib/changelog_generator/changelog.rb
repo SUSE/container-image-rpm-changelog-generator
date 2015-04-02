@@ -40,7 +40,7 @@ module ChangelogGenerator
       packages = {}
 
       if file && File.exist?(file)
-        FasterCSV.open(file, col_sep: '|').readlines.each do |row|
+        FasterCSV.open(file, :col_sep => '|').readlines.each do |row|
           name    = row[0]
           epoch   = row[1]
           version = row[2]
