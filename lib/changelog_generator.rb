@@ -1,4 +1,6 @@
+if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('1.9.0')
 require 'fastercsv'
+end
 require 'erb'
 require 'optparse'
 require 'ostruct'

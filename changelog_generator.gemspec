@@ -18,7 +18,9 @@ EOD
 
   s.required_rubygems_version = '>= 1.3.6'
 
-  s.add_dependency 'fastercsv'
+  if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('1.9.0')
+    s.add_dependency 'fastercsv'
+  end
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'

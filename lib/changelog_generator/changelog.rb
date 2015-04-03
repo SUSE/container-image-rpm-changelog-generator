@@ -40,7 +40,13 @@ module ChangelogGenerator
       packages = {}
 
       if file && File.exist?(file)
-        FasterCSV.open(file, :col_sep => '|').readlines.each do |row|
+        if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('1.9.0')
+          csv = FasterCSV.open(file, :col_sep => '|')
+        else
+          csv = CSV.open(file, :col_sep => '|')
+        end
+ 
+        csv.readlines.each do |row|
           name    = row[0]
           epoch   = row[1]
           version = row[2]
