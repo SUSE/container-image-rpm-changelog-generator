@@ -43,7 +43,7 @@ RPM do not work on SLE11SP3:
 
 The rpm-python package on the opposite is part of the official repositories both
 on SLE11SP3 and on SLE12. Instead of rewriting the program in python Flavio
-decided to take a shortcut and reply on the external python program.
+decided to take a shortcut and rely on the external python program.
 
 The external program has been wrapped inside of the `RPM::Version` class which
 maintains the same API of the class provided by ruby-rpm-ffi and ruby-rpm. This
