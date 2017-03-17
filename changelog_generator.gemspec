@@ -17,6 +17,7 @@ EOD
   s.licenses    = ['MIT']
 
   s.required_rubygems_version = '>= 1.3.6'
+  s.add_dependency 'rpm'
 
   if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('1.9.0')
     s.add_dependency 'fastercsv'
