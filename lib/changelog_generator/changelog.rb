@@ -47,6 +47,7 @@ module ChangelogGenerator
         end
  
         csv.readlines.each do |row|
+          next if row.flatten.empty?
           name    = row[0]
           epoch   = row[1]
           version = row[2]
